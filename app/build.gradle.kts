@@ -73,7 +73,6 @@ android {
 }
 
 dependencies {
-    implementation(projects.feature.base)
     implementation(projects.feature.notes)
 
     implementation(projects.core.common)

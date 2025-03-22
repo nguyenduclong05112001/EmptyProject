@@ -14,13 +14,14 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "hrkdev"
+rootProject.name = "notes"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
 include(":benchmarks")
 include(":core:analytics")
 include(":core:common")
+include(":core:database")
 include(":core:data")
 include(":core:designsystem")
 include(":core:domain")
@@ -36,4 +37,3 @@ include(":sync:sync-test")
 include(":ui-test-hilt-manifest")
 
 include(":feature:notes")
-include(":feature:base")

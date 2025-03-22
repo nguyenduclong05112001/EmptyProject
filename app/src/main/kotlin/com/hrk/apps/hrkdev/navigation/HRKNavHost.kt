@@ -20,13 +20,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import com.hrk.apps.hrkdev.ui.HRKAppState
-import com.hrk.base.home.navigation.HomeRoute
-import com.hrk.base.home.navigation.homeScreen
-import com.hrk.base.home.navigation.navigateToHome
-import com.hrk.base.other.navigation.navigateToOther
-import com.hrk.base.other.navigation.otherScreen
-import com.hrk.base.setting.navigation.navigateToSetting
-import com.hrk.base.setting.navigation.settingScreen
+import com.hrk.notes.create_note.navigation.createNoteScreen
+import com.hrk.notes.create_note.navigation.navigateToCreateNote
+import com.hrk.notes.home.navigation.HomeRoute
+import com.hrk.notes.home.navigation.homeScreen
+import com.hrk.notes.home.navigation.navigateToHome
+import com.hrk.notes.setting.navigation.navigateToSetting
+import com.hrk.notes.setting.navigation.settingScreen
 
 /**
  * Top-level navigation graph. Navigation is organized as explained at
@@ -48,9 +48,10 @@ fun HRKNavHost(
         modifier = modifier,
     ) {
         homeScreen(
-            onNextScreen = navController::navigateToOther,
+            onNextScreen = navController::navigateToCreateNote,
         )
-        otherScreen(
+        createNoteScreen(
+            navController = navController,
             onNextScreen = navController::navigateToSetting,
         )
         settingScreen(

@@ -36,16 +36,13 @@ import com.hrk.apps.hrkdev.navigation.TopLevelDestination
 import com.hrk.apps.hrkdev.navigation.TopLevelDestination.HOME
 import com.hrk.apps.hrkdev.navigation.TopLevelDestination.OTHER
 import com.hrk.apps.hrkdev.navigation.TopLevelDestination.SETTING
-import com.hrk.base.home.navigation.navigateToHome
-import com.hrk.base.other.navigation.navigateToOther
-import com.hrk.base.setting.navigation.navigateToSetting
+import com.hrk.notes.home.navigation.navigateToHome
+import com.hrk.notes.create_note.navigation.navigateToCreateNote
+import com.hrk.notes.setting.navigation.navigateToSetting
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.datetime.TimeZone
 
 @Composable
 fun rememberHRKAppState(
@@ -127,7 +124,7 @@ class HRKAppState(
             when (topLevelDestination) {
                 HOME -> navController.navigateToHome(topLevelNavOptions)
                 SETTING -> navController.navigateToSetting(topLevelNavOptions)
-                OTHER -> navController.navigateToOther(topLevelNavOptions)
+                OTHER -> navController.navigateToCreateNote(topLevelNavOptions)
             }
         }
     }

@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="11">
+      <module name="hrkdev.app" target="17" />
+      <module name="hrkdev.benchmarks" target="17" />
+      <module name="hrkdev.core.analytics" target="17" />
+      <module name="hrkdev.core.data" target="17" />
+      <module name="hrkdev.core.designsystem" target="17" />
+      <module name="hrkdev.core.domain" target="17" />
+      <module name="hrkdev.core.network" target="17" />
+      <module name="hrkdev.core.notifications" target="17" />
+      <module name="hrkdev.core.testing" target="17" />
+      <module name="hrkdev.core.ui" target="17" />
+      <module name="hrkdev.feature.base" target="17" />
+      <module name="hrkdev.feature.notes" target="17" />
+      <module name="hrkdev.sync.sync-test" target="17" />
+      <module name="hrkdev.sync.work" target="17" />
+      <module name="hrkdev.ui-test-hilt-manifest" target="17" />
+      <module name="notes.feature.base" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

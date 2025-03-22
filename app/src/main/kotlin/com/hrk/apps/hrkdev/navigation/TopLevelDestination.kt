@@ -18,9 +18,9 @@ package com.hrk.apps.hrkdev.navigation
 
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.hrk.apps.hrkdev.core.designsystem.icon.HRKIcons
-import com.hrk.base.home.navigation.HomeRoute
-import com.hrk.base.other.navigation.OtherRoute
-import com.hrk.base.setting.navigation.SettingRoute
+import com.hrk.notes.home.navigation.HomeRoute
+import com.hrk.notes.create_note.navigation.CreateNoteRoute
+import com.hrk.notes.setting.navigation.SettingRoute
 import kotlin.reflect.KClass
 
 /**
@@ -46,6 +46,6 @@ enum class TopLevelDestination(
     OTHER(
         selectedIcon = HRKIcons.Grid3x3,
         unselectedIcon = HRKIcons.Grid3x3,
-        route = OtherRoute::class,
+        route = CreateNoteRoute::class,
     ),
 }
