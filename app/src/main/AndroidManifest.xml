@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission
-        android:name="com.google.android.gms.permission.AD_ID"
-        tools:node="remove" />
-    <uses-permission
-        android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION"
-        tools:node="remove" />
-    <uses-permission
-        android:name="android.permission.ACCESS_ADSERVICES_AD_ID"
-        tools:node="remove" />
 
     <application
         android:name=".HRKApplication"
@@ -25,10 +14,6 @@
         android:theme="@style/Theme.HRK"
         tools:targetApi="tiramisu">
 
-        <profileable
-            android:shell="true"
-            tools:targetApi="q" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -37,31 +22,7 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="https" />
-                <data android:host="www.hrkdev.apps.samples.google.com" />
-            </intent-filter>
         </activity>
-
-        <!-- Disable Firebase analytics by default. This setting is overwritten for the `prod`
-        flavor -->
-        <meta-data
-            android:name="firebase_analytics_collection_deactivated"
-            android:value="true" />
-        <!-- Disable collection of AD_ID for all build variants -->
-        <meta-data
-            android:name="google_analytics_adid_collection_enabled"
-            android:value="false" />
-        <!-- Firebase automatically adds the following property which we don't use so remove it -->
-        <property
-            android:name="android.adservices.AD_SERVICES_CONFIG"
-            tools:node="remove" />
-
     </application>
 
 </manifest>

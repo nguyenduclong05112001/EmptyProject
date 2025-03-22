@@ -20,13 +20,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.runtime.CompositionLocalProvider
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.metrics.performance.JankStats
-import com.hrk.apps.hrkdev.core.analytics.AnalyticsHelper
-import com.hrk.apps.hrkdev.core.analytics.LocalAnalyticsHelper
 import com.hrk.apps.hrkdev.core.data.util.NetworkMonitor
-import com.hrk.apps.hrkdev.core.data.util.TimeZoneMonitor
 import com.hrk.apps.hrkdev.core.designsystem.theme.HRKTheme
 import com.hrk.apps.hrkdev.ui.HRKApp
 import com.hrk.apps.hrkdev.ui.rememberHRKAppState
@@ -35,15 +29,8 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-
     @Inject
     lateinit var networkMonitor: NetworkMonitor
-
-    @Inject
-    lateinit var timeZoneMonitor: TimeZoneMonitor
-
-    @Inject
-    lateinit var analyticsHelper: AnalyticsHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,15 +38,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             val appState = rememberHRKAppState(
                 networkMonitor = networkMonitor,
-                timeZoneMonitor = timeZoneMonitor,
             )
-
-            CompositionLocalProvider(
-                LocalAnalyticsHelper provides analyticsHelper,
-            ) {
-                HRKTheme {
-                    HRKApp(appState)
-                }
+            HRKTheme {
+                HRKApp(appState)
             }
         }
     }

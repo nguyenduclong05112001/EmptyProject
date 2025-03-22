@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="NightAdjusted.Theme.HRK" parent="android:Theme.Material.NoActionBar.Fullscreen" />
 
-    <style name="NightAdjusted.Theme.HRK" parent="android:Theme.Material.NoActionBar" />
-
-    <!-- The final theme we use -->
     <style name="Theme.HRK" parent="NightAdjusted.Theme.HRK" />
 
 </resources>

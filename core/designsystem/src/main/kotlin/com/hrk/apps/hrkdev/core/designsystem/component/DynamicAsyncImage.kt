@@ -42,9 +42,6 @@ import coil.compose.rememberAsyncImagePainter
 import com.hrk.apps.hrkdev.core.designsystem.R
 import com.hrk.apps.hrkdev.core.designsystem.theme.LocalTintTheme
 
-/**
- * A wrapper around [AsyncImage] which determines the colorFilter based on the theme
- */
 @Composable
 fun DynamicAsyncImage(
     imageUrl: String,
