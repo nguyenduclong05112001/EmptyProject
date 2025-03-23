@@ -17,7 +17,6 @@
 package com.hrk.apps.hrkdev.core.testing.notifications
 
 import com.hrk.apps.hrkdev.core.model.data.NewsResource
-import com.hrk.apps.hrkdev.core.notifications.Notifier
 
 /**
  * Aggregates news resources that have been notified for addition

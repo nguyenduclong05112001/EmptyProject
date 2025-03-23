@@ -14,7 +14,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "notes"
+rootProject.name = "TuneDetect"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
@@ -36,4 +36,4 @@ include(":sync:work")
 include(":sync:sync-test")
 include(":ui-test-hilt-manifest")
 
-include(":feature:notes")
+include(":feature:tuneDetect")

@@ -30,6 +30,8 @@ object HRKIcons {
     val BlackIcon = Icon.DrawableResourceIcon(R.drawable.ic_arrow_back)
     val ArrowLeftIcon = Icon.DrawableResourceIcon(R.drawable.ic_arrow_left)
     val SaveIcon = Icon.DrawableResourceIcon(R.drawable.ic_save)
+    val BackgroundApp = Icon.DrawableResourceIcon(R.drawable.background_app)
+    val EmptyMusic = Icon.DrawableResourceIcon(R.drawable.ic_empty)
 
     //default
     val Add = Icons.Rounded.Add

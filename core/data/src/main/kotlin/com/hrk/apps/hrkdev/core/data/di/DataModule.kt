@@ -15,23 +15,26 @@
  */
 
 package com.hrk.apps.hrkdev.core.data.di
+
+import android.app.Application
+import android.content.Context
 import com.hrk.apps.hrkdev.core.data.util.ConnectivityManagerNetworkMonitor
 import com.hrk.apps.hrkdev.core.data.util.NetworkMonitor
-import com.hrk.apps.hrkdev.core.data.util.TimeZoneBroadcastMonitor
-import com.hrk.apps.hrkdev.core.data.util.TimeZoneMonitor
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class DataModule {
+interface DataModule {
+    @Singleton
     @Binds
-    internal abstract fun bindsNetworkMonitor(
-        networkMonitor: ConnectivityManagerNetworkMonitor,
-    ): NetworkMonitor
+    fun provideContext(application: Application): Context
 
     @Binds
-    internal abstract fun binds(impl: TimeZoneBroadcastMonitor): TimeZoneMonitor
+    fun bindsNetworkMonitor(
+        networkMonitor: ConnectivityManagerNetworkMonitor,
+    ): NetworkMonitor
 }

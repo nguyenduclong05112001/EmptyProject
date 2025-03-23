@@ -73,7 +73,9 @@ android {
 }
 
 dependencies {
-    implementation(projects.feature.notes)
+    implementation(files("libs/acrcloudsdk.jar"))
+
+    implementation(projects.feature.tuneDetect)
 
     implementation(projects.core.common)
     implementation(projects.core.ui)

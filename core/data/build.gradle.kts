@@ -7,12 +7,6 @@ plugins {
 
 android {
     namespace = "com.hrk.apps.hrkdev.core.data"
-    testOptions {
-        unitTests {
-            isIncludeAndroidResources = true
-            isReturnDefaultValues = true
-        }
-    }
 }
 
 dependencies {

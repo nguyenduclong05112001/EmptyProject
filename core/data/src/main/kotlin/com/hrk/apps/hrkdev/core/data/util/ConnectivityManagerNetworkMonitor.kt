@@ -23,8 +23,6 @@ import android.net.Network
 import android.net.NetworkCapabilities
 import android.net.NetworkRequest
 import android.net.NetworkRequest.Builder
-import android.os.Build.VERSION
-import android.os.Build.VERSION_CODES
 import androidx.core.content.getSystemService
 import androidx.tracing.trace
 import com.hrk.apps.hrkdev.core.network.Dispatcher
@@ -38,7 +36,7 @@ import kotlinx.coroutines.flow.conflate
 import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
-internal class ConnectivityManagerNetworkMonitor @Inject constructor(
+class ConnectivityManagerNetworkMonitor @Inject constructor(
     @ApplicationContext private val context: Context,
     @Dispatcher(IO) private val ioDispatcher: CoroutineDispatcher,
 ) : NetworkMonitor {
@@ -92,11 +90,11 @@ internal class ConnectivityManagerNetworkMonitor @Inject constructor(
 
     @Suppress("DEPRECATION")
     private fun ConnectivityManager.isCurrentlyConnected() = when {
-        VERSION.SDK_INT >= VERSION_CODES.M ->
+        true ->
             activeNetwork
                 ?.let(::getNetworkCapabilities)
                 ?.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
 
         else -> activeNetworkInfo?.isConnected
-    } ?: false
+    } == true
 }

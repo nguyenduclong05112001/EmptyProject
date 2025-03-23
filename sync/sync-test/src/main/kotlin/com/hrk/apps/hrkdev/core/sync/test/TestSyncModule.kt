@@ -16,7 +16,6 @@
 
 package com.hrk.apps.hrkdev.core.sync.test
 
-import com.hrk.apps.hrkdev.core.data.util.SyncManager
 import com.hrk.apps.hrkdev.sync.di.SyncModule
 import com.hrk.apps.hrkdev.sync.status.StubSyncSubscriber
 import com.hrk.apps.hrkdev.sync.status.SyncSubscriber

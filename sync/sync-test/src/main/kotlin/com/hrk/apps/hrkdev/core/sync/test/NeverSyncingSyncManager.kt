@@ -16,7 +16,6 @@
 
 package com.hrk.apps.hrkdev.core.sync.test
 
-import com.hrk.apps.hrkdev.core.data.util.SyncManager
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 import javax.inject.Inject

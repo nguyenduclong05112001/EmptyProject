@@ -3,19 +3,20 @@ package com.hrk.apps.hrkdev.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
+import com.hrk.apps.hrkdev.core.data.TuneDetectViewModel
 import com.hrk.apps.hrkdev.ui.HRKAppState
-import com.hrk.notes.create_note.navigation.createNoteScreen
-import com.hrk.notes.create_note.navigation.navigateToCreateNote
-import com.hrk.notes.home.navigation.HomeRoute
-import com.hrk.notes.home.navigation.homeScreen
-import com.hrk.notes.home.navigation.navigateToHome
-import com.hrk.notes.setting.navigation.navigateToSetting
-import com.hrk.notes.setting.navigation.settingScreen
+import com.hrk.tunedetect.home.navigation.HomeRoute
+import com.hrk.tunedetect.home.navigation.homeScreen
+import com.hrk.tunedetect.home.navigation.navigateToHomeScreen
+import com.hrk.tunedetect.setting.navigation.settingScreen
+import com.hrk.tunedetect.splash.navigation.navigateToSplashScreen
+import com.hrk.tunedetect.splash.navigation.splashScreen
 
 @Composable
 fun HRKNavHost(
     modifier: Modifier,
     appState: HRKAppState,
+    tuneDetectViewModel: TuneDetectViewModel,
 ) {
     val navController = appState.navController
     NavHost(
@@ -23,15 +24,17 @@ fun HRKNavHost(
         navController = navController,
         startDestination = HomeRoute,
     ) {
+        splashScreen(
+            onNextScreen = navController::navigateToHomeScreen,
+        )
+
         homeScreen(
-            onNextScreen = navController::navigateToCreateNote,
+            onNextScreen = {},
+            tuneDetectViewModel = tuneDetectViewModel
         )
-        createNoteScreen(
-            navController = navController,
-            onNextScreen = navController::navigateToSetting,
-        )
+
         settingScreen(
-            onNextScreen = navController::navigateToHome,
+            onNextScreen = navController::navigateToSplashScreen,
         )
     }
 }
